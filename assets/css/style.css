@@ -33,8 +33,12 @@ padding-left:2% !important;
 margin-top:3%;
 }
 
-
 .table {
   text-align: center;
+}
+
+.btn {
+  margin-right:3%;
+  margin-left:3%;
 }
 

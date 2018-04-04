@@ -25,6 +25,14 @@ $("#addBtn").on("click", function(event) {
   $("#addDiv").show();
 })
 
+$("#addCancel").on("click", function(event) {
+  $("#addDiv").hide();
+  $("#nameInput").val("")
+  $("#destInput").val("")
+  $("#timeInput").val("")
+  $("#freqInput").val(0)
+})
+
 $("#addUser").on("click", function(event) {
   event.preventDefault();
   $("#addDiv").hide();
