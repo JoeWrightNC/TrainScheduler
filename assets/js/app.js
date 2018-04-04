@@ -50,7 +50,8 @@ database.ref().on("child_added", function (dataSnap) {
   var RETURN_FREQ = dataSnap.val().dbFREQ
   var RETURN_TIME = dataSnap.val().dbTIME
   var RT_CONVERTED = moment(RETURN_TIME, "hh:mm").subtract(1, "years")
-  var CURRENT_TIME = moment()
+  var CURRENT_TIME = moment().format("HH:mm")
+  $("#currentTime").text(" " + CURRENT_TIME)
   var TIME_DIFFERENCE = moment().diff(moment(RT_CONVERTED), "minutes")
   var TIME_REMAINDER = TIME_DIFFERENCE % RETURN_FREQ
   var MINUTES_TIL_TRAIN = RETURN_FREQ - TIME_REMAINDER
@@ -68,4 +69,8 @@ database.ref().on("child_added", function (dataSnap) {
   </tr>
   `
   )
+
+  setInterval(function() {
+    window.location.reload();
+  }, 60000); 
 })
